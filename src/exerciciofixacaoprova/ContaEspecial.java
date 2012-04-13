@@ -5,6 +5,10 @@ public class ContaEspecial extends ContaBancaria
 {
     private float limiteDeCheque;
 
+    public ContaEspecial(String cliente, int numConta, int numAgencia, float saldo) {
+        super(cliente, numConta, numAgencia, saldo);
+    }
+
     @Override
     public void sacar(float valor) 
     {

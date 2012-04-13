@@ -8,6 +8,15 @@ public class ContaBancaria
     protected int numConta;
     protected int numAgencia;
     protected float saldo;
+    
+    
+    public ContaBancaria(String cliente, int numConta, int numAgencia, float saldo) 
+    {
+        this.cliente = cliente;
+        this.numConta = numConta;
+        this.numAgencia = numAgencia;
+        this.saldo = saldo;
+    }
 
     public String getCliente() {
         return cliente;
@@ -60,11 +69,12 @@ public class ContaBancaria
         saldo += valor;
     }
     
-    public void exibir()
+    String exibir()
     {
         String dadosDaConta;
         dadosDaConta = "Cliente" + cliente + "\n" + "Numero da Conta" + numConta + "\n"; 
         dadosDaConta = "Numero da Agencia: " + numAgencia + "\n" + "Saldo: " + saldo + "\n";
+        return dadosDaConta;
     }
     
     

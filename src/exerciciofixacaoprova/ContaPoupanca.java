@@ -9,6 +9,11 @@ public class ContaPoupanca extends ContaBancaria
         return diaDeRendimento;
     }
 
+    public ContaPoupanca(String cliente, int numConta, int numAgencia, float saldo) {
+        super(cliente, numConta, numAgencia, saldo);
+    }
+
+
     public void setDiaDeRendimento(int diaDeRendimento) {
         this.diaDeRendimento = diaDeRendimento;
     }
