@@ -36,14 +36,14 @@ public class ContaBancaria
         }
         else if (valor <= saldo)
         {
-            saldo -= valor;  
+            saldo = getSaldo() - valor;  
             System.out.println("Realizado o saque de: " + valor);
         }
     }
     
     public void depositar(float valor)
     {
-        saldo += valor;
+        saldo = getSaldo() + valor;
         System.out.println("Realizado o deposito de: " + valor);
     }
     

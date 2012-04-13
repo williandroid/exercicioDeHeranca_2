@@ -14,15 +14,11 @@ public class ContaPoupanca extends ContaBancaria
     }
     
 
-
     public ContaPoupanca() 
     {
-        Teclado ler = new Teclado();
-        cliente = ler.lerStrings("Digite o Cliente: ");
-        numConta = ler.lerStrings("Digite o numero da Conta: ");
-        numAgencia = ler.lerStrings("Digite o numero da Agencia: ");
-        saldo = ler.lerReal("Digite o saldo: ");
+        
     }
+
     
     public float calcularNovoSalario(float taxa)
     {         
