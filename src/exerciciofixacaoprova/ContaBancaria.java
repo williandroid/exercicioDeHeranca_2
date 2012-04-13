@@ -27,6 +27,25 @@ public class ContaBancaria
         saldo = ler.lerReal("Digite o saldo: ");
     }
     
+    public void buscar()
+    {
+        String cliBusca = "";
+        String numContaBusca = "";
+        while(cliBusca == cliente || numContaBusca == numConta)
+        {
+            System.out.println("Cliente: " + cliente);
+            System.out.println("Conta: " + numConta);
+            System.out.println("Digite 1 SACAR");
+            System.out.println("Digite 2 DEPOSITAR");
+            System.out.println("Digite 3 EXIBIR DADOS");
+            System.out.println("Digite 4 MOSTRAR SALDO ATUAL | conta poupanca");
+            System.out.println("O que deseja fazer: ");
+        }
+        
+        System.out.println("Usuário não Encontrado");
+       
+    }       
+    
     public void sacar(float valor)
     {
         
