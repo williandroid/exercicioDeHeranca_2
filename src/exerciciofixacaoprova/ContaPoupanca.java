@@ -20,11 +20,14 @@ public class ContaPoupanca extends ContaBancaria
     }
 
     
-    public float calcularNovoSalario(float taxa)
+    public void calcularNovoSalario()
     {         
+         Teclado ler = new Teclado();
+         float taxa = 0;
+         
+         taxa = ler.lerReal("Valor: ");
          taxa = getSaldo() * (taxa / 100);
          saldo = getSaldo() + taxa;
-         return taxa;
         
     }
 }
