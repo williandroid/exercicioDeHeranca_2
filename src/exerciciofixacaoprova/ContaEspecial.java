@@ -16,9 +16,11 @@ public class ContaEspecial extends ContaBancaria
       
 
     @Override
-    public void sacar(float valor) 
+    public void sacar() 
     {
-        super.sacar(valor);
+        super.sacar();
+        
+        float valor = 0;
         
         if (valor < saldo)
         {

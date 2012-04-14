@@ -20,34 +20,68 @@ public class ContaBancaria
     
     public ContaBancaria()
     {
-        Teclado ler = new Teclado();
-        cliente = ler.lerStrings("Digite o Cliente: ");
-        numConta = ler.lerStrings("Digite o numero da Conta: ");
-        numAgencia = ler.lerStrings("Digite o numero da Agencia: ");
-        saldo = ler.lerReal("Digite o saldo: ");
-    }
+      
+    } 
     
     public void buscar()
     {
-        String cliBusca = "";
-        String numContaBusca = "";
-        while(cliBusca == cliente || numContaBusca == numConta)
+        Teclado ler = new Teclado();
+        
+        String cliBusca;
+        String numContaBusca;
+        int opcao;
+        
+        cliBusca = ler.lerStrings("Digite o Cliente: ");
+        numContaBusca = ler.lerStrings("Digite o numero da Conta: ");
+        
+        do
         {
             System.out.println("Cliente: " + cliente);
             System.out.println("Conta: " + numConta);
-            System.out.println("Digite 1 SACAR");
+            System.out.println("\nDigite 1 SACAR");
             System.out.println("Digite 2 DEPOSITAR");
             System.out.println("Digite 3 EXIBIR DADOS");
-            System.out.println("Digite 4 MOSTRAR SALDO ATUAL | conta poupanca");
-            System.out.println("O que deseja fazer: ");
+            System.out.println("Digite 4 MOSTRAR SALDO ATUAL | CP");
+            
+            opcao = ler.lerInteiro("O que deseja fazer: ");
+          
+            
+            if (opcao == 1)
+            {
+               sacar();
+               System.out.println(exibir());
+            }
+            
+            else if (opcao == 2)
+            {
+                depositar();
+                System.out.println(exibir());
+            }
+            
+            else if (opcao == 3)
+            {
+              System.out.println(exibir());
+            }
+            
+            else 
+            {
+                break;
+            }
+            
+                        
         }
-        
-        System.out.println("Usuário não Encontrado");
+        while(cliBusca.equalsIgnoreCase(cliente) || numContaBusca.equalsIgnoreCase(numConta));
        
-    }       
+            System.out.println("Usuário não Encontrado");     
+       
+    }      
     
-    public void sacar(float valor)
+    public void sacar()
     {
+        Teclado ler = new Teclado();
+        float valor = 0;
+                
+        valor = ler.lerReal("valor: ");
         
         if (valor > saldo)
         {
@@ -60,8 +94,12 @@ public class ContaBancaria
         }
     }
     
-    public void depositar(float valor)
+    public void depositar()
     {
+        Teclado ler = new Teclado();
+        float valor = 0;
+        
+        valor = ler.lerReal("Depositar: ");
         saldo = getSaldo() + valor;
         System.out.println("Realizado o deposito de: " + valor);
     }
