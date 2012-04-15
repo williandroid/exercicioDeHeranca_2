@@ -16,73 +16,11 @@ public class ContaBancaria
         this.numConta = numConta;
         this.numAgencia = numAgencia;
         this.saldo = saldo;
-    }
+    }  
+     
     
-    public ContaBancaria()
-    {
-      
-    } 
-    
-    public void buscar()
-    {
-        Teclado ler = new Teclado();
-        
-        String cliBusca;
-        String numContaBusca;
-        int opcao;
-        
-        cliBusca = ler.lerStrings("Digite o Cliente: ");
-        numContaBusca = ler.lerStrings("Digite o numero da Conta: ");
-        
-        do
-        {
-            System.out.println("Cliente: " + cliente);
-            System.out.println("Conta: " + numConta);
-            System.out.println("\nDigite 1 SACAR");
-            System.out.println("Digite 2 DEPOSITAR");
-            System.out.println("Digite 3 EXIBIR DADOS");
-            System.out.println("Digite 4 MOSTRAR SALDO ATUAL | CP");
-            
-            opcao = ler.lerInteiro("O que deseja fazer: ");
-          
-            
-            if (opcao == 1)
-            {
-               sacar();
-               System.out.println(exibir());
-            }
-            
-            else if (opcao == 2)
-            {
-                depositar();
-                System.out.println(exibir());
-            }
-            
-            else if (opcao == 3)
-            {
-              System.out.println(exibir());
-            }
-            
-            else 
-            {
-                break;
-            }
-            
-                        
-        }
-        while(cliBusca.equalsIgnoreCase(cliente) || numContaBusca.equalsIgnoreCase(numConta));
-       
-            System.out.println("Usuário não Encontrado");     
-       
-    }      
-    
-    public void sacar()
-    {
-        Teclado ler = new Teclado();
-        float valor = 0;
-                
-        valor = ler.lerReal("valor: ");
-        
+    public void sacar(float valor)
+    {        
         if (valor > saldo)
         {
             System.out.println("Impossivel Sacar");
@@ -94,13 +32,9 @@ public class ContaBancaria
         }
     }
     
-    public void depositar()
-    {
-        Teclado ler = new Teclado();
-        float valor = 0;
-        
-        valor = ler.lerReal("Depositar: ");
-        saldo = getSaldo() + valor;
+    public void depositar(float valor)
+    {       
+        saldo += valor;
         System.out.println("Realizado o deposito de: " + valor);
     }
     

@@ -14,10 +14,6 @@ public class ContaPoupanca extends ContaBancaria
     }
     
 
-    public ContaPoupanca() 
-    {
-        
-    }
 
     
     public void calcularNovoSalario()
